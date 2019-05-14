@@ -25,7 +25,10 @@ public class Shape {
     public int sizeX;
     public int sizeY;
     public int sizePlaceholder;
-
+    public int sizeBoundX;
+    public int sizeBoundY;
+    public Rectangle bound1;
+    public Rectangle bound2;
     
     //Constructor
     public Shape()  {
@@ -44,14 +47,26 @@ public class Shape {
         dy = 0;
         //ii = new ImageIcon(imgSrc);
         //img = ii.getImage();
-        //bound = new Rectangle(this.x, this.y, this.size, this.size);
+        bound1 = new Rectangle(this.x, this.y, sizeX, sizeY);
+        bound2 = new Rectangle(this.x, this.y, sizeBoundX, sizeBoundY);
     }
     
+    
+    
+    public Rectangle getBound1() {
+        return bound1;
+    }
+
+    public Rectangle getBound2()    {
+        return bound2;
+    }
+ 
     
     public void draw(Graphics g)   {
         //g.drawImage(img, x, y, size, size, null);
         Graphics2D g2d = (Graphics2D) g;
-        //g2d.draw(bound);
+        g2d.draw(bound1);
+        g2d.draw(bound2);
     }
 
     
@@ -102,14 +117,17 @@ public class Shape {
     public void setSizeY(int sizeY) {
         this.sizeY = sizeY;
     }
-
-    
     
     
     public void update()    {
-        //x+=dx; i don't think I really need this it should be in the key events
+        x+=dx;
         y+=dy;
-        //bound = new Rectangle(this.x, this.y, this.size, this.size);
+        bound1 = new Rectangle(this.x, this.y, sizeX, sizeY);
+        bound2 = new Rectangle(this.x, this.y, sizeBoundX, sizeBoundY);// have to think about if the sizes are going to work for the second bound
+    }
+    
+    public void move()  {
+        dy = 5;
     }
     
     public void wallCollisions()    {
@@ -121,9 +139,15 @@ public class Shape {
             x = 1130;
         }
         
-        if (y >= 800) {
-            dx = 0;
+        if (y >= 730) {
+            dy = 0;
         }
+    }
+    public void moveLeft()  {
+        dx = -5;
+    }
+    public void moveRight() {
+        dx = 5;
     }
     
 }

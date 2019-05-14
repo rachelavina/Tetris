@@ -8,6 +8,7 @@ package tetris;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 /**
  *
@@ -27,7 +28,7 @@ public class OShape extends Shape{
         g.setColor(Color.RED);
         g.fillRect(x, y, 50,50);
        //drawPolygon(g, 100, 100, 100, 150, 120, 150, 120, 200, 140, 200, 140, 125, 120, 125, 120, 100);
-       
+        bound1 = new Rectangle(x, y, sizeX, sizeY);
     }
     
     public void rotateLeft(Graphics g)  {

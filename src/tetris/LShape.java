@@ -8,6 +8,7 @@ package tetris;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 /**
  *
@@ -19,6 +20,8 @@ public class LShape extends Shape{
         super(x, y); //super calls the character constructor
       sizeX = 50;
       sizeY = 75;
+      sizeBoundX = 25;
+      sizeBoundY = 25;
     }
     
     @Override
@@ -28,7 +31,8 @@ public class LShape extends Shape{
         g.fillRect(x, y, 25, 75);
         g.fillRect(x + 25,y + 50, 25, 25);
        //drawPolygon(g, 100, 100, 100, 150, 120, 150, 120, 200, 140, 200, 140, 125, 120, 125, 120, 100);
-       
+        bound1 = new Rectangle(x, y, sizeX, sizeY);
+        bound2 = new Rectangle(x + 25, y + 50, sizeBoundX, sizeBoundY);
     }
     
     public void rotateLeft(Graphics g)  {

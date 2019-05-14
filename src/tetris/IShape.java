@@ -8,12 +8,15 @@ package tetris;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 /**
  *
  * @author 628972
  */
 public class IShape extends Shape{
+    
+    
     public IShape(int x, int y) {
         super(x, y); //super calls the character constructor
       sizeX = 25;
@@ -27,9 +30,7 @@ public class IShape extends Shape{
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 25, 100);
-        
-       //drawPolygon(g, 100, 100, 100, 150, 120, 150, 120, 200, 140, 200, 140, 125, 120, 125, 120, 100);
-       
+        bound1 = new Rectangle(x, y, sizeX, sizeY);
     }
     
     public void rotateLeft(Graphics g)  {

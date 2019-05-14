@@ -26,8 +26,14 @@ public class Game extends JPanel{
     private ZShape test;
     private ArrayList<Shape> shapes;
     private boolean rotateLeft;
+    private boolean rotateUp;
+    private boolean rotateRight;
+    private boolean rotateDown;
     private boolean moveLeft;
     private boolean moveRight;
+    private boolean moving;
+    private int pieces = 0;
+    private boolean over;
     
     public Game()   {
         super();
@@ -43,19 +49,19 @@ public class Game extends JPanel{
         for (int i = 0; i < 100; i++) {
 
             if (i % 5 == 0) {
-               shapes.add(new IShape((int) (Math.random() * 900), -50));
+               shapes.add(new IShape((int) (Math.random() * 900), -100)); // can change the y-value to a random negative and then have a while loop to reset the Y if they overlap
             }
             if (i % 4 == 0) {
-               shapes.add(new OShape((int) (Math.random() * 900), -50));
+               shapes.add(new OShape((int) (Math.random() * 900), -100));
             }
             if (i % 3 == 0) {
-               shapes.add(new TShape((int) (Math.random() * 900), -50));
+               shapes.add(new TShape((int) (Math.random() * 900), -100));
             }
             if (i % 2 == 0) {
-               shapes.add(new LShape((int) (Math.random() * 900), -50));
+               shapes.add(new LShape((int) (Math.random() * 900), -100));
             }
             if (i % 5 == 0) {
-               shapes.add(new ZShape((int) (Math.random() * 900), -50));
+               shapes.add(new ZShape((int) (Math.random() * 900), -100));
             }
         }      
     }
@@ -65,27 +71,34 @@ public class Game extends JPanel{
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         this.setBackground(Color.BLACK);
-        
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 24));
         
         Graphics2D g2d = (Graphics2D)g;
         
         test.draw(g);
         
         if (rotateLeft == true) {
-            //g.clearRect(test.getX(), test.getY(), 20, 50);
             
             test.rotateLeft(g);
             
-            //Rectangle rect = new Rectangle(test.getX(), test.getY(), 20, 20);
-            //g2d.rotate(Math.toRadians(45));
-            //g.setColor(Color.red);
-            //g2d.fill(rect);
+
             
         }
+
         
         for (Shape shape : shapes) {
             shape.draw(g);
         }
+        
+        for (Shape shape: shapes) {
+            //code for font at the end, check this
+             if (over == true) {
+                g.setFont(new Font("TimesRoman", Font.PLAIN, 100));
+                g.setColor(Color.white);
+                g.drawString("Game Over", 325, 400);
+             }
+        }
+ 
         
         
         
@@ -100,50 +113,61 @@ public class Game extends JPanel{
             
             test.update();
             
-            for (Shape s : shapes) {
+             for (Shape s : shapes) {
                 s.update();
                 s.wallCollisions();
-            }
-        
-            for (int i = 0; i < shapes.size(); i++) {
-                shapes.get(i).setDx(5);
+                
                 
             }
+
             
-            /*
+
+            //make a seperate method for drop next line
+            
+            for (Shape s : shapes) {
+                if  (s.getDy()> 0)  {
+                    moving = true;
+                }
+                
+            }
+            if (moving != true) {
+                
+                newPiece();
+                
+                pieces++;
+
+            }
+
+            if (moving == true) {
+               if (moveLeft == true) {
+                shapes.get(pieces - 1).moveLeft();
+            }
+                if (moveRight == true) {
+                shapes.get(pieces -1).moveRight();
+            }
+                if (moveLeft == false && moveRight == false) {
+                    shapes.get(pieces - 1).setDx(0);
+                }
+        
+            }
             for (int i = 0; i < shapes.size(); i++) {
-                for (int j = i + 1; j < shapes.size(); j++) {
-                    if (shapes.get(i).getX() + shapes.get(i).getSizeX() >= shapes.get(j).getX() && shapes.get(i).getY() + shapes.get(i).getSizeY() >= shapes.get(j).getY()) {
-                        if (shapes.get(j).getX() + shapes.get(j).getSizeX() >= shapes.get(i).getX() && shapes.get(j).getY() == shapes.get(i).getX()) {
-                        
-                        }
+              for (int j = i + 1; j < shapes.size(); j++)    {
+              hitBound(shapes.get(i), shapes.get(j));
+            }
+            }
+            
+            for (int i = 0; i < shapes.size(); i++) {
+                if (i < pieces) {
+                    if (shapes.get(i).getY() <= 10 && shapes.get(i).getDy() == 0) {
+                        over = true;
                     }
                 }
             }
-            */
-                    
-            for (int i = 0; i < shapes.size(); i++) {
-                for (int j = 0; j < shapes.size(); j++) {
-                  if(shapes.get(i).getX() + shapes.get(i).getSizeX() >= shapes.get(j).getX() && shapes.get(i).getX() <= shapes.get(j).getX() + shapes.get(j).getSizeX())    {
-                      if (shapes.get(i).getY() + shapes.get(i).getSizeY() >= shapes.get(j).getY() && shapes.get(i).getY() <= shapes.get(j).getY() + shapes.get(j).getSizeY()) {
-                      
-                        shapes.get(i).setDx(0);
-                        shapes.get(j).setDx(0);
-                        shapes.get(i).setDy(0);
-                        shapes.get(j).setDy(0);
-                      }
-                    }  
-                }
-            }
-            //have to figure out how to get one at a time, especially for the way to get one to drop down at a time
-            for (Shape s : shapes) {
-                if (moveLeft == true) {
-                    s.setDx(-5);
-                }
-                if (moveRight == true) {
-                    s.setDx(5);
-                }
-            }
+            
+            
+            moving = false;
+            
+          
     
             
         repaint();
@@ -155,6 +179,7 @@ public class Game extends JPanel{
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             moveLeft = true;
+            
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             moveRight = true;
@@ -165,7 +190,47 @@ public class Game extends JPanel{
         if (e.getKeyCode() == KeyEvent.VK_A)    {
           rotateLeft = true;
         }
+        if (e.getKeyCode() == KeyEvent.VK_W)    {
+          rotateUp = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_D)    {
+          rotateRight = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_S)    {
+          rotateDown = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            moveLeft = false;
+          
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            moveRight = false;
+           
+        }
     }
+    
+    
+    public void hitBound(Shape s1, Shape s2)    {
+        if (s1.getY() > 0 && s2.getY() > 0) {
+
+            if (s1.getBound1().intersects(s2.getBound1()) || s1.getBound2().intersects(s2.getBound2()) || s1.getBound1().intersects(s2.getBound2()) || s1.getBound2().intersects(s2.getBound1())) {
+                s1.setDx(0);
+                s2.setDx(0);
+                s1.setDy(0);
+                s2.setDy(0);
+            }  
+        }
+    }
+    
+
+    public void newPiece()  {
+            shapes.get(pieces).move();
+           
+
+    }
+    
+    
+    
 }
 
 
