@@ -18,17 +18,22 @@ public class OShape extends Shape{
     
     public OShape(int x, int y) {
         super(x, y); //super calls the character constructor
-    sizeX = 50;
-    sizeY = 50;
+        sizeX = 50;
+        sizeY = 50;
+        sizeBoundX = 50;
+        sizeBoundY = 50;
     }
+    
+
     
     @Override
     public void draw(Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.RED);
         g.fillRect(x, y, 50,50);
-       //drawPolygon(g, 100, 100, 100, 150, 120, 150, 120, 200, 140, 200, 140, 125, 120, 125, 120, 100);
-        bound1 = new Rectangle(x, y, sizeX, sizeY);
+        
+        bound1 = new Rectangle(x, y, 50, 50);
+        bound2 = new Rectangle(x, y, 50, 50);
     }
     
     public void rotateLeft(Graphics g)  {
@@ -37,14 +42,48 @@ public class OShape extends Shape{
         g.fillRect(x, y, 300, 300);
         g.setColor(Color.RED);
         g.fillRect(x, y, 50, 50); 
+        //bound1 = new Rectangle(x, y, sizeX, sizeY);
     }
     
-    public void remove()    {
-        
+    public void positionOne(Graphics g)   {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, 300, 300);
+        g.setColor(Color.RED);
+        g.fillRect(x, y, 50, 50);
+       // bound1 = new Rectangle(x, y, sizeX, sizeY);
+        bound1 = new Rectangle (x, y, 50, 50);
+    }
+    
+    public void positionTwo (Graphics g)    {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, 300, 300);
+        g.setColor(Color.RED);
+        g.fillRect(x, y, 50, 50);
+        //bound1 = new Rectangle(x, y, sizeX, sizeY);
+        bound1 = new Rectangle (x, y, 50, 50);
+    }
+    
+    public void positionThree (Graphics g)  {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, 300, 300);
+        g.setColor(Color.RED);
+        g.fillRect(x, y, 50, 50);
+        //bound1 = new Rectangle(x, y, sizeX, sizeY);
+        bound1 = new Rectangle (x, y, 50, 50);
+    }
+    
+    public void positionFour (Graphics g)   {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, 300, 300);
+        g.setColor(Color.RED);
+        g.fillRect(x, y, 50, 50);
+        //bound1 = new Rectangle(x, y, sizeX, sizeY);
+        bound1 = new Rectangle (x, y, 50, 50);
     }
 
-    private void drawPolygon(Graphics g, int i, int i0, int i1, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, int i11, int i12, int i13, int i14) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

@@ -21,6 +21,8 @@ public class IShape extends Shape{
         super(x, y); //super calls the character constructor
       sizeX = 25;
       sizeY = 100;
+      sizeBoundX = 25;
+      sizeBoundY = 100;
     }
     
 
@@ -30,18 +32,75 @@ public class IShape extends Shape{
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 25, 100);
-        bound1 = new Rectangle(x, y, sizeX, sizeY);
+        
+        bound1 = new Rectangle(x, y, 25, 100);
+        bound2 = new Rectangle(x, y, 25, 100);
     }
-    
+    //going to have to take out this method
     public void rotateLeft(Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.BLACK);
         g.fillRect(x, y, 300, 300);
         g.setColor(Color.GREEN);
-        g.fillRect(x, y + 20, 100, 25);  
-        sizeX = sizePlaceholder;
-        sizeX = sizeY;
-        sizeY = sizePlaceholder; //add another placeholder if this doesnt work, all the shapes should just swap x and y
+        g.fillRect(x, y, 100, 25);  
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        //bound1 = new Rectangle(x, y + 20, sizeX, sizeY);
+        bound1 = new Rectangle (x, y, 100, 25);
     }   
     
+    public void positionOne (Graphics g)    {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.GREEN);
+        g.fillRect(x, y, 25, 100);
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        //bound1 = new Rectangle(x, y, sizeX, sizeY);
+        bound1 = new Rectangle (x, y, 25, 100);
+    }
+    
+    public void positionTwo (Graphics g)    {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, 300, 300);
+        g.setColor(Color.GREEN);
+        g.fillRect(x, y, 100, 25);  
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        //bound1 = new Rectangle(x, y + 20, sizeX, sizeY);
+        bound1 = new Rectangle (x, y, 100, 25);
+    }
+    
+    public void positionThree (Graphics g)  {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.GREEN);
+        g.fillRect(x, y, 25, 100);
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        //bound1 = new Rectangle(x, y, sizeX, sizeY);
+        bound1 = new Rectangle (x, y, 25, 100);
+    }
+    
+    public void positionFour (Graphics g)   {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, 300, 300);
+        g.setColor(Color.GREEN);
+        g.fillRect(x, y, 100, 25);  
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        //bound1 = new Rectangle(x, y + 20, sizeX, sizeY);
+        bound1 = new Rectangle (x, y, 100, 25);
+    }
+
 }

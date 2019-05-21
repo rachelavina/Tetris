@@ -34,6 +34,7 @@ public class Game extends JPanel{
     private boolean moving;
     private int pieces = 0;
     private boolean over;
+    private int position = 0;
     
     public Game()   {
         super();
@@ -81,14 +82,49 @@ public class Game extends JPanel{
             
             test.rotateLeft(g);
             
-
-            
         }
 
         
         for (Shape shape : shapes) {
             shape.draw(g);
         }
+        
+        
+    /*    for (int i = pieces; i < pieces+1; i++)  {
+        if (position == 0) {
+            shapes.get(i).positionOne(g);
+        }
+        if (position == 1) {
+            shapes.get(i).positionTwo(g);
+        }
+        if (position == 2) {
+            shapes.get(i).positionThree(g);
+        }
+        if (position == 3) {
+            shapes.get(i).positionFour(g);
+        }
+        if (position == 4) {
+            shapes.get(i).positionOne(g);
+            position = 0;
+        }
+        
+        if (position == -1) {
+            shapes.get(i).positionFour(g);
+        }
+        if (position == -2) {
+            shapes.get(i).positionThree(g);
+        }
+        if (position == -3) {
+            shapes.get(i).positionTwo(g);
+        }
+        if (position == -4) {
+            shapes.get(i).positionOne(g);
+            position = 0;
+        }
+    }*/
+        
+        
+        
         
         for (Shape shape: shapes) {
             //code for font at the end, check this
@@ -115,9 +151,7 @@ public class Game extends JPanel{
             
              for (Shape s : shapes) {
                 s.update();
-                s.wallCollisions();
-                
-                
+                s.wallCollisions();   
             }
 
             
@@ -150,10 +184,13 @@ public class Game extends JPanel{
                 }
         
             }
+            
+            
+            
             for (int i = 0; i < shapes.size(); i++) {
               for (int j = i + 1; j < shapes.size(); j++)    {
               hitBound(shapes.get(i), shapes.get(j));
-            }
+                }
             }
             
             for (int i = 0; i < shapes.size(); i++) {
@@ -171,6 +208,7 @@ public class Game extends JPanel{
     
             
         repaint();
+        
         }
     }
     
@@ -188,17 +226,19 @@ public class Game extends JPanel{
     
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_A)    {
-          rotateLeft = true;
+            rotateLeft = true;
+            position--;
         }
-        if (e.getKeyCode() == KeyEvent.VK_W)    {
-          rotateUp = true;
-        }
+        /*if (e.getKeyCode() == KeyEvent.VK_W)    {
+            rotateUp = true;
+        }*/
         if (e.getKeyCode() == KeyEvent.VK_D)    {
-          rotateRight = true;
+            rotateRight = true;
+            position++;
         }
-        if (e.getKeyCode() == KeyEvent.VK_S)    {
-          rotateDown = true;
-        }
+        /*if (e.getKeyCode() == KeyEvent.VK_S)    {
+            rotateDown = true;
+        }*/
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             moveLeft = false;
           
@@ -212,7 +252,7 @@ public class Game extends JPanel{
     
     public void hitBound(Shape s1, Shape s2)    {
         if (s1.getY() > 0 && s2.getY() > 0) {
-
+//i tried changing this to .getBounds2D and then .intersects method and it doesn't work
             if (s1.getBound1().intersects(s2.getBound1()) || s1.getBound2().intersects(s2.getBound2()) || s1.getBound1().intersects(s2.getBound2()) || s1.getBound2().intersects(s2.getBound1())) {
                 s1.setDx(0);
                 s2.setDx(0);
@@ -224,11 +264,8 @@ public class Game extends JPanel{
     
 
     public void newPiece()  {
-            shapes.get(pieces).move();
-           
-
+        shapes.get(pieces).move();
     }
-    
     
     
 }

@@ -18,8 +18,8 @@ public class ZShape extends Shape{
     
     public ZShape(int x, int y) {
         super(x, y); //super calls the character constructor
-      sizeX = 75;
-      sizeY = 50;
+      sizeX = 50;
+      sizeY = 25;
       sizeBoundX = 50;
       sizeBoundY = 25;
     }
@@ -30,9 +30,14 @@ public class ZShape extends Shape{
         g.setColor(Color.CYAN);
         g.fillRect(x, y, 50, 25);
         g.fillRect(x + 25,y + 25, 50, 25);
-       //drawPolygon(g, 100, 100, 100, 150, 120, 150, 120, 200, 140, 200, 140, 125, 120, 125, 120, 100);
-        bound1 = new Rectangle(x, y, sizeX, sizeY);
-        bound2 = new Rectangle(x + 25, y + 25, sizeBoundX, sizeBoundY);
+        
+        bound1 = new Rectangle(x, y, 50, 25);
+        bound2 = new Rectangle(x + 25, y + 25, 50, 25);
+        
+        g.setColor(Color.WHITE);
+        g2d.draw(bound1);
+        g.setColor(Color.orange);
+        g2d.draw(bound2);
     }
     
     public void rotateLeft(Graphics g)  {
@@ -42,8 +47,69 @@ public class ZShape extends Shape{
         g.setColor(Color.CYAN);
         g.fillRect(x + 25, y, 25, 50);
         g.fillRect(x, y + 25, 25, 50);
-        sizeX = sizePlaceholder;
-        sizeX = sizeY;
-        sizeY = sizePlaceholder;
+        sizePlaceholderX = sizeX;
+        sizePlaceholderY = sizeY;
+        sizeX = sizePlaceholderY;
+        sizeY = sizePlaceholderX;
+    }
+    
+    public void positionOne (Graphics g)    {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, 300, 300);
+        g.setColor(Color.CYAN);
+        g.fillRect(x, y, 50, 25);
+        g.fillRect(x + 25, y + 25, 50, 25);
+        sizePlaceholderX = sizeX;
+        sizePlaceholderY = sizeY;
+        sizeX = sizePlaceholderY;
+        sizeY = sizePlaceholderX;
+        bound1 = new Rectangle(x, y, sizeX, sizeY);
+        bound2 = new Rectangle(x + 25, y + 25, sizeBoundX, sizeBoundY);
+    }
+    
+    public void positionTwo (Graphics g)    {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, 300, 300);
+        g.setColor(Color.CYAN);
+        g.fillRect(x + 25, y, 25, 50);
+        g.fillRect(x, y + 25, 25, 50);
+        sizePlaceholderX = sizeX;
+        sizePlaceholderY = sizeY;
+        sizeX = sizePlaceholderY;
+        sizeY = sizePlaceholderX;
+        bound1 = new Rectangle(x + 25, y, sizeX, sizeY);
+        bound2 = new Rectangle(x, y + 25, sizeBoundY, sizeBoundX);
+    }
+    
+    public void positionThree (Graphics g)  {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, 300, 300);
+        g.setColor(Color.CYAN);
+        g.fillRect(x, y, 50, 25);
+        g.fillRect(x + 25, y + 25, 50, 25);
+        sizePlaceholderX = sizeX;
+        sizePlaceholderY = sizeY;
+        sizeX = sizePlaceholderY;
+        sizeY = sizePlaceholderX;
+        bound1 = new Rectangle(x, y, sizeX, sizeY);
+        bound2 = new Rectangle(x + 25, y + 25, sizeBoundX, sizeBoundY);
+    }
+    
+    public void posiionFour (Graphics g)    {
+        Graphics2D g2d = (Graphics2D) g;
+        g.setColor(Color.BLACK);
+        g.fillRect(x, y, 300, 300);
+        g.setColor(Color.CYAN);
+        g.fillRect(x + 25, y, 25, 50);
+        g.fillRect(x, y + 25, 25, 50);
+        sizePlaceholderX = sizeX;
+        sizePlaceholderY = sizeY;
+        sizeX = sizePlaceholderY;
+        sizeY = sizePlaceholderX;
+        bound1 = new Rectangle(x + 25, y, sizeX, sizeY);
+        bound2 = new Rectangle(x, y + 25, sizeBoundY, sizeBoundX);
     }
 }

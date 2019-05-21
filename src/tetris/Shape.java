@@ -10,6 +10,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.geom.Rectangle2D;
 import javax.swing.ImageIcon;
 
 /**
@@ -24,7 +25,8 @@ public class Shape {
     public int dy;
     public int sizeX;
     public int sizeY;
-    public int sizePlaceholder;
+    public int sizePlaceholderX;
+    public int sizePlaceholderY;
     public int sizeBoundX;
     public int sizeBoundY;
     public Rectangle bound1;
@@ -47,8 +49,8 @@ public class Shape {
         dy = 0;
         //ii = new ImageIcon(imgSrc);
         //img = ii.getImage();
-        bound1 = new Rectangle(this.x, this.y, sizeX, sizeY);
-        bound2 = new Rectangle(this.x, this.y, sizeBoundX, sizeBoundY);
+        bound1 = new Rectangle (this.x, this.y, sizeX, sizeY);
+        bound2 = new Rectangle (this.x, this.y, sizeBoundX, sizeBoundY);
     }
     
     
@@ -63,11 +65,24 @@ public class Shape {
  
     
     public void draw(Graphics g)   {
-        //g.drawImage(img, x, y, size, size, null);
         Graphics2D g2d = (Graphics2D) g;
         g2d.draw(bound1);
         g2d.draw(bound2);
     }
+    
+    public void positionOne(Graphics g)   {
+        
+    }
+    public void positionTwo(Graphics g)   {
+        
+    }
+    public void positionThree(Graphics g)   {
+        
+    }
+    public void positionFour(Graphics g)   {
+        
+    }
+    
 
     
     public int getX() {
