@@ -60,12 +60,15 @@ public class ZShape extends Shape{
         g.setColor(Color.CYAN);
         g.fillRect(x, y, 50, 25);
         g.fillRect(x + 25, y + 25, 50, 25);
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
-        bound1 = new Rectangle(x, y, sizeX, sizeY);
-        bound2 = new Rectangle(x + 25, y + 25, sizeBoundX, sizeBoundY);
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        //bound1 = new Rectangle(x, y, sizeX, sizeY);
+        //bound2 = new Rectangle(x + 25, y + 25, sizeBoundX, sizeBoundY);
+        
+        bound1 = new Rectangle(x, y, 50, 25);
+        bound2 = new Rectangle(x +25, y +25, 50, 25);
     }
     
     public void positionTwo (Graphics g)    {
@@ -75,12 +78,15 @@ public class ZShape extends Shape{
         g.setColor(Color.CYAN);
         g.fillRect(x + 25, y, 25, 50);
         g.fillRect(x, y + 25, 25, 50);
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
-        bound1 = new Rectangle(x + 25, y, sizeX, sizeY);
-        bound2 = new Rectangle(x, y + 25, sizeBoundY, sizeBoundX);
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        //bound1 = new Rectangle(x + 25, y, sizeX, sizeY);
+        //bound2 = new Rectangle(x, y + 25, sizeBoundY, sizeBoundX);
+        
+        bound1 = new Rectangle(x + 25, y, 25, 50);
+        bound2 = new Rectangle(x, y + 25, 25, 50);
     }
     
     public void positionThree (Graphics g)  {
@@ -90,12 +96,15 @@ public class ZShape extends Shape{
         g.setColor(Color.CYAN);
         g.fillRect(x, y, 50, 25);
         g.fillRect(x + 25, y + 25, 50, 25);
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
-        bound1 = new Rectangle(x, y, sizeX, sizeY);
-        bound2 = new Rectangle(x + 25, y + 25, sizeBoundX, sizeBoundY);
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        //bound1 = new Rectangle(x, y, sizeX, sizeY);
+        //bound2 = new Rectangle(x + 25, y + 25, sizeBoundX, sizeBoundY);
+        
+        bound1 = new Rectangle(x, y, 50, 25);
+        bound2 = new Rectangle(x + 25, y + 25, 50, 25);
     }
     
     public void posiionFour (Graphics g)    {
@@ -105,11 +114,14 @@ public class ZShape extends Shape{
         g.setColor(Color.CYAN);
         g.fillRect(x + 25, y, 25, 50);
         g.fillRect(x, y + 25, 25, 50);
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
-        bound1 = new Rectangle(x + 25, y, sizeX, sizeY);
-        bound2 = new Rectangle(x, y + 25, sizeBoundY, sizeBoundX);
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        //bound1 = new Rectangle(x + 25, y, sizeX, sizeY);
+        //bound2 = new Rectangle(x, y + 25, sizeBoundY, sizeBoundX);
+        
+        bound1 = new Rectangle(x + 25, y, 25, 50);
+        bound2 = new Rectangle(x, y + 25, 25, 50);
     }
 }

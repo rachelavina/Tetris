@@ -137,8 +137,8 @@ public class Shape {
     public void update()    {
         x+=dx;
         y+=dy;
-        bound1 = new Rectangle(this.x, this.y, sizeX, sizeY);
-        bound2 = new Rectangle(this.x, this.y, sizeBoundX, sizeBoundY);// have to think about if the sizes are going to work for the second bound
+        //bound1 = new Rectangle(this.x, this.y, sizeX, sizeY);
+        //bound2 = new Rectangle(this.x, this.y, sizeX, sizeY);// have to think about if the sizes are going to work for the second bound
     }
     
     public void move()  {
