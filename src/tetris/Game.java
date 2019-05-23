@@ -79,18 +79,19 @@ public class Game extends JPanel{
         test.draw(g);
         
         if (rotateLeft == true) {
-            
-            test.rotateLeft(g);
-            
+            test.rotateLeft(g);  
         }
 
         
-        for (Shape shape : shapes) {
+        /*for (Shape shape : shapes) {
             shape.draw(g);
-        }
+        }*/
+        //keep this in for insurance, I would go back to this if I can't get it to work before the exam
         
         
-    /*    for (int i = pieces; i < pieces+1; i++)  {
+        for (int i = 0; i < shapes.size(); i++) {
+            //if (moving == true) {
+                
         if (position == 0) {
             shapes.get(i).positionOne(g);
         }
@@ -104,8 +105,8 @@ public class Game extends JPanel{
             shapes.get(i).positionFour(g);
         }
         if (position == 4) {
-            shapes.get(i).positionOne(g);
             position = 0;
+            shapes.get(i).positionOne(g);
         }
         
         if (position == -1) {
@@ -118,10 +119,11 @@ public class Game extends JPanel{
             shapes.get(i).positionTwo(g);
         }
         if (position == -4) {
-            shapes.get(i).positionOne(g);
             position = 0;
-        }
-    }*/
+            shapes.get(i).positionOne(g);
+            }
+        //}
+    }
         
         
         
@@ -173,7 +175,7 @@ public class Game extends JPanel{
             }
 
             if (moving == true) {
-               if (moveLeft == true) {
+                if (moveLeft == true) {
                 shapes.get(pieces - 1).moveLeft();
             }
                 if (moveRight == true) {
@@ -204,8 +206,14 @@ public class Game extends JPanel{
             
             moving = false;
             
-          
+         System.out.println(position); //try and see if the position variable is actually changing, hasn't been run yet
     
+         
+            for (Shape s : shapes) {
+                if (position > 4 || position < -4) {
+                    position = 0;
+                }
+            }
             
         repaint();
         
@@ -252,7 +260,6 @@ public class Game extends JPanel{
     
     public void hitBound(Shape s1, Shape s2)    {
         if (s1.getY() > 0 && s2.getY() > 0) {
-//i tried changing this to .getBounds2D and then .intersects method and it doesn't work
             if (s1.getBound1().intersects(s2.getBound1()) || s1.getBound2().intersects(s2.getBound2()) || s1.getBound1().intersects(s2.getBound2()) || s1.getBound2().intersects(s2.getBound1())) {
                 s1.setDx(0);
                 s2.setDx(0);

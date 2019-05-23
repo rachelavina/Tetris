@@ -42,8 +42,8 @@ public class ZShape extends Shape{
     
     public void rotateLeft(Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.CYAN);
         g.fillRect(x + 25, y, 25, 50);
         g.fillRect(x, y + 25, 25, 50);
@@ -55,8 +55,8 @@ public class ZShape extends Shape{
     
     public void positionOne (Graphics g)    {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.CYAN);
         g.fillRect(x, y, 50, 25);
         g.fillRect(x + 25, y + 25, 50, 25);
@@ -73,8 +73,8 @@ public class ZShape extends Shape{
     
     public void positionTwo (Graphics g)    {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.CYAN);
         g.fillRect(x + 25, y, 25, 50);
         g.fillRect(x, y + 25, 25, 50);
@@ -91,8 +91,8 @@ public class ZShape extends Shape{
     
     public void positionThree (Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.CYAN);
         g.fillRect(x, y, 50, 25);
         g.fillRect(x + 25, y + 25, 50, 25);
@@ -109,8 +109,8 @@ public class ZShape extends Shape{
     
     public void posiionFour (Graphics g)    {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.CYAN);
         g.fillRect(x + 25, y, 25, 50);
         g.fillRect(x, y + 25, 25, 50);

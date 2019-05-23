@@ -38,8 +38,8 @@ public class OShape extends Shape{
     
     public void rotateLeft(Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+       // g.fillRect(x, y, 300, 300);
         g.setColor(Color.RED);
         g.fillRect(x, y, 50, 50); 
         //bound1 = new Rectangle(x, y, sizeX, sizeY);
@@ -47,8 +47,8 @@ public class OShape extends Shape{
     
     public void positionOne(Graphics g)   {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.RED);
         g.fillRect(x, y, 50, 50);
        // bound1 = new Rectangle(x, y, sizeX, sizeY);
@@ -57,8 +57,8 @@ public class OShape extends Shape{
     
     public void positionTwo (Graphics g)    {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.RED);
         g.fillRect(x, y, 50, 50);
         //bound1 = new Rectangle(x, y, sizeX, sizeY);
@@ -67,8 +67,8 @@ public class OShape extends Shape{
     
     public void positionThree (Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.RED);
         g.fillRect(x, y, 50, 50);
         //bound1 = new Rectangle(x, y, sizeX, sizeY);
@@ -77,8 +77,8 @@ public class OShape extends Shape{
     
     public void positionFour (Graphics g)   {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.RED);
         g.fillRect(x, y, 50, 50);
         //bound1 = new Rectangle(x, y, sizeX, sizeY);

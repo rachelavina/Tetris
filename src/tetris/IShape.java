@@ -39,8 +39,8 @@ public class IShape extends Shape{
     //going to have to take out this method
     public void rotateLeft(Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 100, 25);  
         //sizePlaceholderX = sizeX;
@@ -53,6 +53,8 @@ public class IShape extends Shape{
     
     public void positionOne (Graphics g)    {
         Graphics2D g2d = (Graphics2D) g;
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 25, 100);
         //sizePlaceholderX = sizeX;
@@ -65,8 +67,8 @@ public class IShape extends Shape{
     
     public void positionTwo (Graphics g)    {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 100, 25);  
         //sizePlaceholderX = sizeX;
@@ -79,6 +81,8 @@ public class IShape extends Shape{
     
     public void positionThree (Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 25, 100);
         //sizePlaceholderX = sizeX;
@@ -91,8 +95,8 @@ public class IShape extends Shape{
     
     public void positionFour (Graphics g)   {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 100, 25);  
         //sizePlaceholderX = sizeX;

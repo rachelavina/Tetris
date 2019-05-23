@@ -42,8 +42,8 @@ public class TShape extends Shape{
     
     public void rotateLeft(Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.BLACK);
-        g.fillRect(x, y, 300, 300);
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.BLUE);
         g.fillRect(x + 25, y, 25, 75);
         g.fillRect(x + 25, y + 25, 25, 25);
@@ -55,6 +55,8 @@ public class TShape extends Shape{
     
     public void positionOne (Graphics g)   {
         Graphics2D g2d = (Graphics2D) g;
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.BLUE);
         g.fillRect(x, y, 75, 25);
         g.fillRect(x + 25,y + 25, 25, 25);
@@ -70,6 +72,8 @@ public class TShape extends Shape{
     
     public void positionTwo (Graphics g)    {
         Graphics2D g2d = (Graphics2D) g;
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.BLUE);
         g.fillRect(x + 25, y, 25, 75);
         g.fillRect(x, y + 25, 25, 25);
@@ -85,6 +89,8 @@ public class TShape extends Shape{
     
     public void positionThree (Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
+        //g.setColor(Color.BLACK);
+        //g.fillRect(x, y, 300, 300);
         g.setColor(Color.BLUE);
         g.fillRect(x, y + 25, 75, 25);
         g.fillRect(x + 25, y, 25, 25);
@@ -100,6 +106,8 @@ public class TShape extends Shape{
     
     public void positionFour (Graphics g)   {
         Graphics2D g2d = (Graphics2D) g;
+        //g.setColor(Color.BLACK);
+       // g.fillRect(x, y, 300, 300);
         g.setColor(Color.BLUE);
         g.fillRect(x, y, 25, 75);
         g.fillRect(x + 25, y + 25, 25, 25);

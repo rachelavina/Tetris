@@ -142,7 +142,7 @@ public class Shape {
     }
     
     public void move()  {
-        dy = 5;
+        dy = 3;
     }
     
     public void wallCollisions()    {
