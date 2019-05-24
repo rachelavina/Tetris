@@ -31,6 +31,14 @@ public class Shape {
     public int sizeBoundY;
     public Rectangle bound1;
     public Rectangle bound2;
+    //public int position;
+    private boolean hit;
+    public int place1X;
+    public int place1Y;
+    public int place2X;
+    public int place2Y;
+    public int holdX;
+    public int holdY;
     
     //Constructor
     public Shape()  {
@@ -47,8 +55,7 @@ public class Shape {
         this.y = y;
         dx = 0;
         dy = 0;
-        //ii = new ImageIcon(imgSrc);
-        //img = ii.getImage();
+
         bound1 = new Rectangle (this.x, this.y, sizeX, sizeY);
         bound2 = new Rectangle (this.x, this.y, sizeBoundX, sizeBoundY);
     }
@@ -132,6 +139,23 @@ public class Shape {
     public void setSizeY(int sizeY) {
         this.sizeY = sizeY;
     }
+
+   /* public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }*/
+
+    public boolean isHit() {
+        return hit;
+    }
+
+    public void setHit(boolean hit) {
+        this.hit = hit;
+    }
+    
     
     
     public void update()    {

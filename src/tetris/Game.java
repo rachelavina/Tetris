@@ -23,27 +23,21 @@ import java.util.TimerTask;
 public class Game extends JPanel{
 
     private Timer timer;
-    private ZShape test;
     private ArrayList<Shape> shapes;
-    private boolean rotateLeft;
-    private boolean rotateUp;
-    private boolean rotateRight;
-    private boolean rotateDown;
     private boolean moveLeft;
     private boolean moveRight;
     private boolean moving;
     private int pieces = 0;
     private boolean over;
-    private int position = 0;
+    private int position;
+    private int shapeTracker = 0;
     
     public Game()   {
         super();
         setSize(1200, 960);
         timer = new Timer();
         timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 1000/24);
-        
-        
-        test = new ZShape(100, 100);
+
         
         
         shapes = new ArrayList<>();
@@ -75,12 +69,6 @@ public class Game extends JPanel{
         g.setFont(new Font("TimesRoman", Font.PLAIN, 24));
         
         Graphics2D g2d = (Graphics2D)g;
-        
-        test.draw(g);
-        
-        if (rotateLeft == true) {
-            test.rotateLeft(g);  
-        }
 
         
         /*for (Shape shape : shapes) {
@@ -90,8 +78,10 @@ public class Game extends JPanel{
         
         
         for (int i = 0; i < shapes.size(); i++) {
-            //if (moving == true) {
-                
+            //shapeTracker = i; 
+            if (shapes.get(i).getDy() > 0) {
+
+    
         if (position == 0) {
             shapes.get(i).positionOne(g);
         }
@@ -105,6 +95,7 @@ public class Game extends JPanel{
             shapes.get(i).positionFour(g);
         }
         if (position == 4) {
+            //shapes.get(i).setPosition(0);
             position = 0;
             shapes.get(i).positionOne(g);
         }
@@ -119,10 +110,15 @@ public class Game extends JPanel{
             shapes.get(i).positionTwo(g);
         }
         if (position == -4) {
+            //shapes.get(i).setPosition(0);
             position = 0;
             shapes.get(i).positionOne(g);
-            }
-        //}
+            }            
+        }
+        else {
+            shapes.get(i).draw(g);
+        }
+        
     }
         
         
@@ -148,8 +144,6 @@ public class Game extends JPanel{
     
         @Override
         public void run() {
-            
-            test.update();
             
              for (Shape s : shapes) {
                 s.update();
@@ -191,7 +185,7 @@ public class Game extends JPanel{
             
             for (int i = 0; i < shapes.size(); i++) {
               for (int j = i + 1; j < shapes.size(); j++)    {
-              hitBound(shapes.get(i), shapes.get(j));
+                hitBound(shapes.get(i), shapes.get(j));
                 }
             }
             
@@ -206,14 +200,15 @@ public class Game extends JPanel{
             
             moving = false;
             
-         System.out.println(position); //try and see if the position variable is actually changing, hasn't been run yet
-    
+         //System.out.println(shapes.get(shapeTracker).getPosition()); //try and see if the position variable is actually changing, hasn't been run yet
+         System.out.println(position);
          
             for (Shape s : shapes) {
                 if (position > 4 || position < -4) {
-                    position = 0;
+                   position = 0;
                 }
             }
+            
             
         repaint();
         
@@ -234,19 +229,13 @@ public class Game extends JPanel{
     
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_A)    {
-            rotateLeft = true;
+            //shapes.get(shapeTracker).setPosition(shapes.get(shapeTracker).getPosition()-1);
             position--;
         }
-        /*if (e.getKeyCode() == KeyEvent.VK_W)    {
-            rotateUp = true;
-        }*/
         if (e.getKeyCode() == KeyEvent.VK_D)    {
-            rotateRight = true;
+            //shapes.get(shapeTracker).setPosition(shapes.get(shapeTracker).getPosition()+1);
             position++;
         }
-        /*if (e.getKeyCode() == KeyEvent.VK_S)    {
-            rotateDown = true;
-        }*/
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             moveLeft = false;
           
@@ -265,6 +254,8 @@ public class Game extends JPanel{
                 s2.setDx(0);
                 s1.setDy(0);
                 s2.setDy(0);
+                s1.setHit(true);
+                s2.setHit(true);
             }  
         }
     }
