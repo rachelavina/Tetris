@@ -34,15 +34,7 @@ public class IShape extends Shape{
     public void draw(Graphics g)  {
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.GREEN);
-        //g.fillRect(x, y, 25, 100);
-        
-        //bound1 = new Rectangle(x, y, 25, 100);
-        //bound2 = new Rectangle(x, y, 25, 100);
-        //final int rotation = position;
-        
-        /*
-        this didn't work, it basically just read the "rotation' as zero and painted it but then it 
-        */
+
         g.setColor(Color.GREEN);
         g.fillRect(x, y, sizeX, sizeY);
         bound1 = new Rectangle (x, y, sizeX, sizeY);  

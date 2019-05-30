@@ -93,16 +93,6 @@ public class ZShape extends Shape{
         bound1 = new Rectangle(x + 25, y, 25, 50);
         bound2 = new Rectangle(x, y + 25, 25, 50);
         
-        /*sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
-        
-        holdX = sizeBoundX;
-        holdY = sizeBoundY;
-        sizeBoundX = holdY;
-        sizeBoundY = holdX;*/
-        
         sizeX = 25;
         sizeY = 50;
         sizeBoundX = 25;

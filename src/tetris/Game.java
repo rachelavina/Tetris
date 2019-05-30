@@ -30,7 +30,6 @@ public class Game extends JPanel{
     private int pieces = 0;
     private boolean over;
     private int position;
-    private int shapeTracker = 0;
     
     public Game()   {
         super();
@@ -44,7 +43,7 @@ public class Game extends JPanel{
         for (int i = 0; i < 100; i++) {
 
             if (i % 5 == 0) {
-               shapes.add(new IShape((int) (Math.random() * 900), -100)); // can change the y-value to a random negative and then have a while loop to reset the Y if they overlap
+               shapes.add(new IShape((int) (Math.random() * 900), -100));
             }
             if (i % 4 == 0) {
                shapes.add(new OShape((int) (Math.random() * 900), -100));
@@ -69,12 +68,6 @@ public class Game extends JPanel{
         g.setFont(new Font("TimesRoman", Font.PLAIN, 24));
         
         Graphics2D g2d = (Graphics2D)g;
-
-        
-        /*for (Shape shape : shapes) {
-            shape.draw(g);
-        }*/
-        //keep this, I would go back to this if I can't get it to work before the exam
         
         
         for (int i = 0; i < shapes.size(); i++) {
@@ -122,7 +115,6 @@ public class Game extends JPanel{
         
         
         for (Shape shape: shapes) {
-            //code for font at the end, check this
              if (over == true) {
                 g.setFont(new Font("TimesRoman", Font.PLAIN, 100));
                 g.setColor(Color.white);
@@ -197,8 +189,7 @@ public class Game extends JPanel{
             
             moving = false;
             
-         //System.out.println(shapes.get(shapeTracker).getPosition()); //try and see if the position variable is actually changing, hasn't been run yet
-         System.out.println(position);
+        System.out.println(position);
          
             for (Shape s : shapes) {
                 if (position >= 4 || position <= -4) {
@@ -226,11 +217,9 @@ public class Game extends JPanel{
     
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_A)    {
-            //shapes.get(shapeTracker).setPosition(shapes.get(shapeTracker).getPosition()-1);
             position--;
         }
         if (e.getKeyCode() == KeyEvent.VK_D)    {
-            //shapes.get(shapeTracker).setPosition(shapes.get(shapeTracker).getPosition()+1);
             position++;
         }
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -251,8 +240,6 @@ public class Game extends JPanel{
                 s2.setDx(0);
                 s1.setDy(0);
                 s2.setDy(0);
-                s1.setHit(true);
-                s2.setHit(true);
             }  
         }
     }

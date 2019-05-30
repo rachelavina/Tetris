@@ -61,11 +61,7 @@ public class TShape extends Shape{
 
         bound1 = new Rectangle (x, y, 75, 25);
         bound2 = new Rectangle (x + 25, y + 25, 25, 25);
-                
-        //sizePlaceholderX = sizeX;
-        //sizePlaceholderY = sizeY;
-        //sizeX = sizePlaceholderY;
-        //sizeY = sizePlaceholderX;
+        
         sizeX = 75;
         sizeY = 25;
         
@@ -82,11 +78,6 @@ public class TShape extends Shape{
         g.fillRect(x, y + 25, 25, 25);
         bound1 = new Rectangle (x + 25, y, 25, 75);
         bound2 = new Rectangle (x, y + 25, 25, 25);
-                
-        //sizePlaceholderX = sizeX;
-        //sizePlaceholderY = sizeY;
-        //sizeX = sizePlaceholderY;
-        //sizeY = sizePlaceholderX;
         
         sizeX = 25;
         sizeY = 75;
@@ -104,12 +95,7 @@ public class TShape extends Shape{
         g.fillRect(x + 25, y, 25, 25);
         bound1 = new Rectangle (x, y + 25, 75, 25);
         bound2 = new Rectangle (x + 25, y, 25, 25);
-                
-        //sizePlaceholderX = sizeX;
-        //sizePlaceholderY = sizeY;
-        //sizeX = sizePlaceholderY;
-        //sizeY = sizePlaceholderX;
-        
+
         sizeX = 75;
         sizeY = 25;
         
@@ -126,11 +112,7 @@ public class TShape extends Shape{
         g.fillRect(x + 25, y + 25, 25, 25);
         bound1 = new Rectangle (x, y, 25, 75);
         bound2 = new Rectangle (x + 25, y + 25, 25, 25);
-                
-        //sizePlaceholderX = sizeX;
-        //sizePlaceholderY = sizeY;
-        //sizeX = sizePlaceholderY;
-        //sizeY = sizePlaceholderX;
+
         
         sizeX = 25;
         sizeY = 75;
