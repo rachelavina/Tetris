@@ -44,10 +44,10 @@ public class ZShape extends Shape{
         g2d.draw(bound2);*/
         
         g.fillRect(place1X, place1Y, sizeX, sizeY);
-        g.fillRect(place2X, place2Y, sizeBoundX, sizeBoundY);
+        g.fillRect(place2X, place2Y, sizeX, sizeY);
         
         bound1 = new Rectangle(place1X, place1Y, sizeX, sizeY);
-        bound2 = new Rectangle(place2X, place2Y, sizeBoundX, sizeBoundY);
+        bound2 = new Rectangle(place2X, place2Y, sizeX, sizeY);
         
         
     }
@@ -133,7 +133,7 @@ public class ZShape extends Shape{
         place2Y = y+25;
     }
     
-    public void posiionFour (Graphics g)    {
+    public void positionFour (Graphics g)    {
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.CYAN);
         g.fillRect(x + 25, y, 25, 50);
@@ -146,7 +146,7 @@ public class ZShape extends Shape{
         sizeBoundX = 25;
         sizeBoundY = 50;
         
-        place1X = x + 25;
+        place1X = x+25;
         place1Y = y;
         place2X = x;
         place2Y = y+25;
