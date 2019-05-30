@@ -20,7 +20,7 @@ public class ZShape extends Shape{
         super(x, y); //super calls the character constructor
       sizeX = 50;
       sizeY = 25;
-      sizeBoundX = 50;
+      sizeBoundX = 50; //may not need this declarations just hardcode them in the methods!!!!
       sizeBoundY = 25;
       place1X = x;
       place1Y = y;
@@ -61,7 +61,7 @@ public class ZShape extends Shape{
         bound1 = new Rectangle(x, y, 50, 25);
         bound2 = new Rectangle(x +25, y +25, 50, 25);
         
-        sizePlaceholderX = sizeX;
+        /*sizePlaceholderX = sizeX;
         sizePlaceholderY = sizeY;
         sizeX = sizePlaceholderY;
         sizeY = sizePlaceholderX;
@@ -69,12 +69,17 @@ public class ZShape extends Shape{
         holdX = sizeBoundX;
         holdY = sizeBoundY;
         sizeBoundX = holdY;
-        sizeBoundY = holdX;
+        sizeBoundY = holdX;*/
+        
+        sizeX = 50;
+        sizeY = 25;
+        sizeBoundX = 50;
+        sizeBoundY = 25;
         
         place1X = x;
         place1Y = y;
         place2X = x+25;
-        place2Y = y+50;
+        place2Y = y+25;
         
         
         
@@ -88,7 +93,7 @@ public class ZShape extends Shape{
         bound1 = new Rectangle(x + 25, y, 25, 50);
         bound2 = new Rectangle(x, y + 25, 25, 50);
         
-        sizePlaceholderX = sizeX;
+        /*sizePlaceholderX = sizeX;
         sizePlaceholderY = sizeY;
         sizeX = sizePlaceholderY;
         sizeY = sizePlaceholderX;
@@ -96,7 +101,12 @@ public class ZShape extends Shape{
         holdX = sizeBoundX;
         holdY = sizeBoundY;
         sizeBoundX = holdY;
-        sizeBoundY = holdX;
+        sizeBoundY = holdX;*/
+        
+        sizeX = 25;
+        sizeY = 50;
+        sizeBoundX = 25;
+        sizeBoundY = 50;
         
         place1X = x + 25;
         place1Y = y;
@@ -112,15 +122,10 @@ public class ZShape extends Shape{
         bound1 = new Rectangle(x, y, 50, 25);
         bound2 = new Rectangle(x + 25, y + 25, 50, 25);
         
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
-        
-        holdX = sizeBoundX;
-        holdY = sizeBoundY;
-        sizeBoundX = holdY;
-        sizeBoundY = holdX;
+        sizeX = 50;
+        sizeY = 25;
+        sizeBoundX = 50;
+        sizeBoundY = 25;
         
         place1X = x;
         place1Y = y;
@@ -136,15 +141,10 @@ public class ZShape extends Shape{
         bound1 = new Rectangle(x + 25, y, 25, 50);
         bound2 = new Rectangle(x, y + 25, 25, 50);
         
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
-        
-        holdX = sizeBoundX;
-        holdY = sizeBoundY;
-        sizeBoundX = holdY;
-        sizeBoundY = holdX;
+        sizeX = 25;
+        sizeY = 50;
+        sizeBoundX = 25;
+        sizeBoundY = 50;
         
         place1X = x + 25;
         place1Y = y;

@@ -74,11 +74,10 @@ public class Game extends JPanel{
         /*for (Shape shape : shapes) {
             shape.draw(g);
         }*/
-        //keep this in for insurance, I would go back to this if I can't get it to work before the exam
+        //keep this, I would go back to this if I can't get it to work before the exam
         
         
         for (int i = 0; i < shapes.size(); i++) {
-            //shapeTracker = i; 
             if (shapes.get(i).getDy() > 0) {
 
     
@@ -95,7 +94,6 @@ public class Game extends JPanel{
             shapes.get(i).positionFour(g);
         }
         if (position == 4) {
-            //shapes.get(i).setPosition(0);
             position = 0;
             shapes.get(i).positionOne(g);
         }
@@ -110,7 +108,6 @@ public class Game extends JPanel{
             shapes.get(i).positionTwo(g);
         }
         if (position == -4) {
-            //shapes.get(i).setPosition(0);
             position = 0;
             shapes.get(i).positionOne(g);
             }            
@@ -204,7 +201,7 @@ public class Game extends JPanel{
          System.out.println(position);
          
             for (Shape s : shapes) {
-                if (position > 4 || position < -4) {
+                if (position >= 4 || position <= -4) {
                    position = 0;
                 }
             }

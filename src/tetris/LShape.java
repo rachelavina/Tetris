@@ -61,10 +61,13 @@ public class LShape extends Shape{
         bound1 = new Rectangle (x, y, 25, 75);
         bound2 = new Rectangle (x + 25, y + 50, 25, 25);
         
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        
+        sizeX = 25;
+        sizeY = 75;
         
         place1X = x;
         place1Y = y;
@@ -80,10 +83,13 @@ public class LShape extends Shape{
         bound1 = new Rectangle (x, y, 75, 25);
         bound2 = new Rectangle (x, y + 25, 25, 25);
         
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        
+        sizeX = 75;
+        sizeY = 25;
         
         place1X = x;
         place1Y = y;
@@ -99,10 +105,13 @@ public class LShape extends Shape{
         bound1 = new Rectangle (x + 25, y, 25, 75);
         bound2 = new Rectangle (x, y, 25, 25);
         
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        
+        sizeX = 25;
+        sizeY = 75;
         
         place1X = x + 25;
         place1Y = y;
@@ -118,10 +127,13 @@ public class LShape extends Shape{
         bound1 = new Rectangle (x, y + 25, 75, 25);
         bound2 = new Rectangle (x + 50, y, 25, 25);
         
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
+        //sizePlaceholderX = sizeX;
+        //sizePlaceholderY = sizeY;
+        //sizeX = sizePlaceholderY;
+        //sizeY = sizePlaceholderX;
+        
+        sizeX = 75;
+        sizeY = 25;
         
         place1X = x;
         place1Y = y + 25;

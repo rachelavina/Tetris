@@ -57,10 +57,8 @@ public class IShape extends Shape{
         g.fillRect(x, y, 25, 100);
         bound1 = new Rectangle (x, y, 25, 100);
         
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
+        sizeX = 25;
+        sizeY = 100;
         
     }
     
@@ -69,11 +67,9 @@ public class IShape extends Shape{
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 100, 25);  
         bound1 = new Rectangle (x, y, 100, 25);
-                
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
+ 
+        sizeX = 100;
+        sizeY = 25;
     }
     
     public void positionThree (Graphics g)  {
@@ -81,11 +77,9 @@ public class IShape extends Shape{
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 25, 100);
         bound1 = new Rectangle (x, y, 25, 100);
-                
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
+        
+        sizeX = 25;
+        sizeY = 100;
     }
     
     public void positionFour (Graphics g)   {
@@ -93,11 +87,9 @@ public class IShape extends Shape{
         g.setColor(Color.GREEN);
         g.fillRect(x, y, 100, 25);  
         bound1 = new Rectangle (x, y, 100, 25);
-                
-        sizePlaceholderX = sizeX;
-        sizePlaceholderY = sizeY;
-        sizeX = sizePlaceholderY;
-        sizeY = sizePlaceholderX;
+        
+        sizeX = 100;
+        sizeY = 25;
     }
 
 }
